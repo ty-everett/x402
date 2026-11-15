@@ -1,0 +1,504 @@
+diff --git a/.github/workflows/check_format.yml b/.github/workflows/check_format.yml
+--- a/.github/workflows/check_format.yml
++++ b/.github/workflows/check_format.yml
+@@ -17,7 +17,7 @@
+           run_install: false
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           cache: "pnpm"
+           cache-dependency-path: ./typescript
+       - name: Ensure formatting
+@@ -37,7 +37,7 @@
+           run_install: false
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           cache: "pnpm"
+           cache-dependency-path: ./examples/typescript
+       - name: Ensure formatting
+diff --git a/.github/workflows/check_lint.yml b/.github/workflows/check_lint.yml
+--- a/.github/workflows/check_lint.yml
++++ b/.github/workflows/check_lint.yml
+@@ -17,7 +17,7 @@
+           run_install: false
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           cache: "pnpm"
+           cache-dependency-path: ./typescript
+       - name: Ensure Linting
+@@ -37,7 +37,7 @@
+           run_install: false
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           cache: "pnpm"
+           cache-dependency-path: ./examples/typescript
+       - name: Ensure Linting
+diff --git a/.github/workflows/check_package_lock.yml b/.github/workflows/check_package_lock.yml
+--- a/.github/workflows/check_package_lock.yml
++++ b/.github/workflows/check_package_lock.yml
+@@ -19,7 +19,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           cache: "pnpm"
+           cache-dependency-path: ./typescript
+ 
+@@ -46,7 +46,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           cache: "pnpm"
+           cache-dependency-path: ./examples/typescript
+ 
+@@ -73,7 +73,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           cache: "pnpm"
+           cache-dependency-path: ./e2e
+ 
+diff --git a/.github/workflows/check_payment_channels_codegen.yml b/.github/workflows/check_payment_channels_codegen.yml
+--- a/.github/workflows/check_payment_channels_codegen.yml
++++ b/.github/workflows/check_payment_channels_codegen.yml
+@@ -31,7 +31,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           cache: "pnpm"
+           cache-dependency-path: scripts/payment-channels-codegen/pnpm-lock.yaml
+ 
+diff --git a/.github/workflows/check_paywall_template.yml b/.github/workflows/check_paywall_template.yml
+--- a/.github/workflows/check_paywall_template.yml
++++ b/.github/workflows/check_paywall_template.yml
+@@ -30,7 +30,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           cache: "pnpm"
+           cache-dependency-path: ./typescript
+ 
+diff --git a/.github/workflows/e2e_tests.yml b/.github/workflows/e2e_tests.yml
+--- a/.github/workflows/e2e_tests.yml
++++ b/.github/workflows/e2e_tests.yml
+@@ -44,7 +44,7 @@
+       - name: Setup Node.js
+         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+ 
+       # Write secrets to e2e/.env so ci-select-families.sh (dotenv load),
+       # test.ts, and spawned servers/clients/facilitators can read wallet config.
+diff --git a/.github/workflows/publish_npm_coinbase_x402.yml b/.github/workflows/publish_npm_coinbase_x402.yml
+--- a/.github/workflows/publish_npm_coinbase_x402.yml
++++ b/.github/workflows/publish_npm_coinbase_x402.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "22"
++          node-version: "22.23.4"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Install and build
+diff --git a/.github/workflows/publish_npm_scoped_x402_all.yml b/.github/workflows/publish_npm_scoped_x402_all.yml
+--- a/.github/workflows/publish_npm_scoped_x402_all.yml
++++ b/.github/workflows/publish_npm_scoped_x402_all.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_aptos.yml b/.github/workflows/publish_npm_scoped_x402_aptos.yml
+--- a/.github/workflows/publish_npm_scoped_x402_aptos.yml
++++ b/.github/workflows/publish_npm_scoped_x402_aptos.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_avm.yml b/.github/workflows/publish_npm_scoped_x402_avm.yml
+--- a/.github/workflows/publish_npm_scoped_x402_avm.yml
++++ b/.github/workflows/publish_npm_scoped_x402_avm.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_axios.yml b/.github/workflows/publish_npm_scoped_x402_axios.yml
+--- a/.github/workflows/publish_npm_scoped_x402_axios.yml
++++ b/.github/workflows/publish_npm_scoped_x402_axios.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_canton.yml b/.github/workflows/publish_npm_scoped_x402_canton.yml
+--- a/.github/workflows/publish_npm_scoped_x402_canton.yml
++++ b/.github/workflows/publish_npm_scoped_x402_canton.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_cardano.yml b/.github/workflows/publish_npm_scoped_x402_cardano.yml
+--- a/.github/workflows/publish_npm_scoped_x402_cardano.yml
++++ b/.github/workflows/publish_npm_scoped_x402_cardano.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_casper.yml b/.github/workflows/publish_npm_scoped_x402_casper.yml
+--- a/.github/workflows/publish_npm_scoped_x402_casper.yml
++++ b/.github/workflows/publish_npm_scoped_x402_casper.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_concordium.yml b/.github/workflows/publish_npm_scoped_x402_concordium.yml
+--- a/.github/workflows/publish_npm_scoped_x402_concordium.yml
++++ b/.github/workflows/publish_npm_scoped_x402_concordium.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_core.yml b/.github/workflows/publish_npm_scoped_x402_core.yml
+--- a/.github/workflows/publish_npm_scoped_x402_core.yml
++++ b/.github/workflows/publish_npm_scoped_x402_core.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_evm.yml b/.github/workflows/publish_npm_scoped_x402_evm.yml
+--- a/.github/workflows/publish_npm_scoped_x402_evm.yml
++++ b/.github/workflows/publish_npm_scoped_x402_evm.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_express.yml b/.github/workflows/publish_npm_scoped_x402_express.yml
+--- a/.github/workflows/publish_npm_scoped_x402_express.yml
++++ b/.github/workflows/publish_npm_scoped_x402_express.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_extensions.yml b/.github/workflows/publish_npm_scoped_x402_extensions.yml
+--- a/.github/workflows/publish_npm_scoped_x402_extensions.yml
++++ b/.github/workflows/publish_npm_scoped_x402_extensions.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_fastify.yml b/.github/workflows/publish_npm_scoped_x402_fastify.yml
+--- a/.github/workflows/publish_npm_scoped_x402_fastify.yml
++++ b/.github/workflows/publish_npm_scoped_x402_fastify.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_fetch.yml b/.github/workflows/publish_npm_scoped_x402_fetch.yml
+--- a/.github/workflows/publish_npm_scoped_x402_fetch.yml
++++ b/.github/workflows/publish_npm_scoped_x402_fetch.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_hedera.yml b/.github/workflows/publish_npm_scoped_x402_hedera.yml
+--- a/.github/workflows/publish_npm_scoped_x402_hedera.yml
++++ b/.github/workflows/publish_npm_scoped_x402_hedera.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_hono.yml b/.github/workflows/publish_npm_scoped_x402_hono.yml
+--- a/.github/workflows/publish_npm_scoped_x402_hono.yml
++++ b/.github/workflows/publish_npm_scoped_x402_hono.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_keeta.yml b/.github/workflows/publish_npm_scoped_x402_keeta.yml
+--- a/.github/workflows/publish_npm_scoped_x402_keeta.yml
++++ b/.github/workflows/publish_npm_scoped_x402_keeta.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_mcp.yml b/.github/workflows/publish_npm_scoped_x402_mcp.yml
+--- a/.github/workflows/publish_npm_scoped_x402_mcp.yml
++++ b/.github/workflows/publish_npm_scoped_x402_mcp.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_near.yml b/.github/workflows/publish_npm_scoped_x402_near.yml
+--- a/.github/workflows/publish_npm_scoped_x402_near.yml
++++ b/.github/workflows/publish_npm_scoped_x402_near.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_next.yml b/.github/workflows/publish_npm_scoped_x402_next.yml
+--- a/.github/workflows/publish_npm_scoped_x402_next.yml
++++ b/.github/workflows/publish_npm_scoped_x402_next.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_paywall.yml b/.github/workflows/publish_npm_scoped_x402_paywall.yml
+--- a/.github/workflows/publish_npm_scoped_x402_paywall.yml
++++ b/.github/workflows/publish_npm_scoped_x402_paywall.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_stellar.yml b/.github/workflows/publish_npm_scoped_x402_stellar.yml
+--- a/.github/workflows/publish_npm_scoped_x402_stellar.yml
++++ b/.github/workflows/publish_npm_scoped_x402_stellar.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_svm.yml b/.github/workflows/publish_npm_scoped_x402_svm.yml
+--- a/.github/workflows/publish_npm_scoped_x402_svm.yml
++++ b/.github/workflows/publish_npm_scoped_x402_svm.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_tvm.yml b/.github/workflows/publish_npm_scoped_x402_tvm.yml
+--- a/.github/workflows/publish_npm_scoped_x402_tvm.yml
++++ b/.github/workflows/publish_npm_scoped_x402_tvm.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_scoped_x402_xrpl.yml b/.github/workflows/publish_npm_scoped_x402_xrpl.yml
+--- a/.github/workflows/publish_npm_scoped_x402_xrpl.yml
++++ b/.github/workflows/publish_npm_scoped_x402_xrpl.yml
+@@ -21,7 +21,7 @@
+ 
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+ 
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_x402.yml b/.github/workflows/publish_npm_x402.yml
+--- a/.github/workflows/publish_npm_x402.yml
++++ b/.github/workflows/publish_npm_x402.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_x402_axios.yml b/.github/workflows/publish_npm_x402_axios.yml
+--- a/.github/workflows/publish_npm_x402_axios.yml
++++ b/.github/workflows/publish_npm_x402_axios.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_x402_express.yml b/.github/workflows/publish_npm_x402_express.yml
+--- a/.github/workflows/publish_npm_x402_express.yml
++++ b/.github/workflows/publish_npm_x402_express.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_x402_fetch.yml b/.github/workflows/publish_npm_x402_fetch.yml
+--- a/.github/workflows/publish_npm_x402_fetch.yml
++++ b/.github/workflows/publish_npm_x402_fetch.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_x402_hono.yml b/.github/workflows/publish_npm_x402_hono.yml
+--- a/.github/workflows/publish_npm_x402_hono.yml
++++ b/.github/workflows/publish_npm_x402_hono.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/publish_npm_x402_next.yml b/.github/workflows/publish_npm_x402_next.yml
+--- a/.github/workflows/publish_npm_x402_next.yml
++++ b/.github/workflows/publish_npm_x402_next.yml
+@@ -21,7 +21,7 @@
+       
+       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+         with:
+-          node-version: "24"
++          node-version: "24.22.1"
+           registry-url: "https://registry.npmjs.org"
+       
+       - name: Update npm for OIDC trusted publishing
+diff --git a/.github/workflows/unit_tests.yml b/.github/workflows/unit_tests.yml
+--- a/.github/workflows/unit_tests.yml
++++ b/.github/workflows/unit_tests.yml
+@@ -10,7 +10,7 @@
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        node-version: ["22", "24"]
++        node-version: ["22.23.4", "24.22.1"]
+     steps:
+       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+ 
